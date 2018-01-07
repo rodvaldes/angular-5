@@ -6,7 +6,7 @@
 		<p>Lista de objetivos ({{ contadorItems }})</p>
 	</div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@objetivos]="objetivos.length">
 	<div class="col">
 		<p class="sm">Este es un formulario</p>
 		<form>
@@ -15,7 +15,7 @@
 		</form>
 	</div>
 	<div class="col">
-		<p class="life-container" *ngFor="let objetivo of objetivos">
+		<p class="life-container" *ngFor="let objetivo of objetivos; let i = index" (click)="removeObjetivo(i)">
 			{{ objetivo }}
 		</p>
 	</div>
